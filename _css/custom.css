@@ -1,0 +1,22 @@
+#main #bio {
+    display: flex;
+    flex-direction: row;
+    text-align: justify;
+    gap: 20px;
+}
+
+#main #bio img {
+    border-radius: 1.5em;
+    max-height: 250px;
+    align-self: center;
+}
+
+@media (max-width: 800px) {
+    #main #bio {
+      flex-direction: column;
+    }
+
+    #main #bio img {
+        margin-top: 20px;
+    }
+}
