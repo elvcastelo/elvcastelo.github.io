@@ -25,7 +25,30 @@
     margin-bottom: 1em;
 }
 
+.blogpost_anchor {
+    text-decoration: none;
+}
+
 .blogpost_figure {
     align-items: center;
     flex-direction: column;
+}
+
+.blogpost_editdate {
+    color: gray;
+    font-size: 0.9em;
+}
+
+.blogpost_info {
+    color: #4d4d4d;
+    text-decoration: none;
+    background-color: #f8f8f8;
+    border-radius: 30px;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.blogpost_info h1 {
+    color: black;
+    font-size: 1.4em;
 }
