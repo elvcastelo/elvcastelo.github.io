@@ -1,23 +1,33 @@
+using Dates
+
 const isAppleARM = Sys.isapple() && Sys.ARCH === :aarch64
 if !isAppleARM
     using TikzPictures
 end
 
-function hfun_bar(vname)
-    val = Meta.parse(vname[1])
-    return round(sqrt(val), digits=2)
-end
+function hfun_blogposts()
+    list = readdir("blog")
+    filter!(f -> endswith(f, ".md"), list)
+    dates = [stat(joinpath("blog", f)).mtime |> unix2datetime for f in list]
+    io = IOBuffer()
 
-function hfun_m1fill(vname)
-    var = vname[1]
-    return pagevar("index", var)
-end
+    for i in eachindex(list)
+        content = readlines(joinpath("blog", list[i]))
+        ert = ceil(Int, length(content) / 50)
+        fi = "/blog/" * splitext(list[i])[1] * "/"
+        title = Franklin.hfun_fill(["title", fi[2:end-1]])
+        description = Franklin.hfun_fill(["description", fi[2:end-1]])
+        write(io, """<a href="$(fi)" class="blogpost_anchor">
+            <div class=\"blogpost_info\">
+            <h1>$(title)</h1>
+            <p>$(description)</p>
+            <hr />
+            <p class="blogpost_editdate">$(day(dates[i])) $(monthname(dates[i])) · $(ert) minutos de leitura</p>
+            </div>
+        </a>""")
+    end
 
-function lx_baz(com, _)
-    # keep this first line
-    brace_content = Franklin.content(com.braces[1]) # input string
-    # do whatever you want here
-    return uppercase(brace_content)
+    return String(take!(io))
 end
 
 if !isAppleARM
