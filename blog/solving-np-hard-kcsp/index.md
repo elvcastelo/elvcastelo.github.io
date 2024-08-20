@@ -14,7 +14,7 @@ Caso os gestores desta rede de telecomunicações desejem interligar dois pontos
 
 Assumamos que após uma reunião com os técnicos da empresa foi decidido que uma probabilidade $k / T$ de falha, onde $0 \leq k \leq T$, é considerada aceitável para a natureza das atividades da empresa. Perceba que no nosso cenário isto é equivalente a dizer que o caminho pode possuir no máximo $k$ cores distintas. Em adição, a empresa pode decidir preferência pelas rotas de menor custo.
 
-O exemplo acima trata de uma possível aplicação do problema de encontrar um caminho mínimo entre um par de vértices em um grafo ponderado com coloração de arestas tal que o caminho contenha no máximo $k$ cores distintas. Além de aplicações em rede de telecomunicações, o problema também possui aplicações na robótica[^1] e em redes de transportes[^2]. Problemas semelhantes definidos na mesma estrutura de grafos encontram suas aplicações em biologia computacional[^3].
+O exemplo acima trata de uma possível aplicação do problema de encontrar um caminho mínimo entre um par de vértices em um grafo ponderado com coloração de arestas tal que o caminho contenha no máximo $k$ cores distintas. Além de aplicações em redes de telecomunicações, o problema também possui aplicações na robótica[^1] e em redes de transportes[^2]. Problemas semelhantes definidos na mesma estrutura de grafos encontram suas aplicações em biologia computacional[^3].
 
 [^1]: Eiben, E., & Kanj, I. (2020). A colored path problem and its applications. ACM Transactions on Algorithms (TALG), 16(4), 1-48.
 [^2]: Dehouche, N. (2020). The k-interchange-constrained diameter of a transit network: a connectedness indicator that accounts for travel convenience. Transportation Letters, 12(3), 197-201.
@@ -22,7 +22,15 @@ O exemplo acima trata de uma possível aplicação do problema de encontrar um c
 
 ## Definição
 
-Seja $G = (V, E, w, c)$ um grafo[^4][^5] ponderado com coloração de arestas, onde $V$ é o conjunto de vértices, $E$ o conjunto de arestas, $w: E \rightarrow \mathbb{R}_{+}$ a função de custo das arestas, e $c: E \rightarrow \mathbb{N}$ a função de coloração de arestas. O problema do caminho mínimo com no máximo $k$ cores ($k$-CSP, do inglês *$k$-Colour Shortest Path*) consiste em encontrar o menor caminho entre um vértice de origem $s$ e um vértice de destino $t$ em $G$ que contenha no máximo $k$ cores distintas, onde $k$ é um inteiro positivo. O problema é conhecido ser $\mathbf{NP}$-difícil[^6][^7].
+Considere a definição do problema abaixo, onde $V$ é o conjunto de vértices, $E$ o conjunto de arestas, $w: E \rightarrow \mathbb{R}_{+}$ a função de custo das arestas, e $c: E \rightarrow \mathbb{N}$ a função de coloração de arestas. Note que $k$ é um inteiro positivo.
+
+\nameddefinition{$k$-Colour Shortest Path ou $k$-CSP}{
+  Dado um grafo[^4][^5] ponderado com coloração de arestas $G = (V, E, w, c)$ e um par de vértices $s, t \in V$, o problema $k$-Colour Shortest Path consiste em obter um $st$-caminho de custo mínimo em $G$ contendo no máximo $k$ cores distintas.
+}
+
+Chamados de $st$-caminho um caminho em $G$ partindo do vértice $s$ ao vértice $t$. Estes vértices são chamados de fonte e sumidouro, respectivamente.
+
+\proposition{O $k$-Colour Shortest Path é $\mathbf{NP}$-difícil[^6][^7].}
 
 \label{fig:exemplo_kcsp}
 \begin{tikzpic}{exemplo_kcsp}
@@ -43,7 +51,7 @@ Seja $G = (V, E, w, c)$ um grafo[^4][^5] ponderado com coloração de arestas, o
   \end{scope}
 \end{tikzpic}
 
-Observemos o exemplo dado na figura acima. Sejam $A$ e $D$ os vértices de origem e destino, respectivamente, e definamos $k = 2$ como o limite de cores. Note que o $AD$-caminho (isto é, um caminho de $A$ para $D$) de custo mínimo é dado pela sequência $A \rightarrow B \rightarrow E \rightarrow C \rightarrow D$ de custo $8$. Todavia, este caminho utiliza três cores (vermelho, azul, e verde), portanto, não é considerado uma solução viável para o nosso problema. O leitor poderá conferir que a (única) solução ótima para nossa instância é dada pelo caminho $A \rightarrow C \rightarrow D$ de custo $10$ que utiliza duas cores distintas.
+Observemos o exemplo dado na figura acima. Sejam $A$ e $D$ os vértices de origem e destino, respectivamente, e definamos $k = 2$ como o limite de cores. Note que o $AD$-caminho de custo mínimo é dado pela sequência $A \rightarrow B \rightarrow E \rightarrow C \rightarrow D$ de custo $8$. Todavia, este caminho utiliza três cores (vermelho, azul, e verde), portanto, não é considerado uma solução viável para o nosso problema. O leitor poderá conferir que a (única) solução ótima para nossa instância é dada pelo caminho $A \rightarrow C \rightarrow D$ de custo $10$ que utiliza duas cores distintas.
 
 [^4]: Um exemplo de grafo ponderado pode ser visto na [figura acima](#fig:exemplo_kcsp), onde $V = \{A, B, C, D, E\}$ e $E = \{AB, AC, BE, CE, CD\}$.
 [^5]: O leitor interessado poderá consultar o [material escrito](https://www.ime.usp.br/~pf/algoritmos_para_grafos/aulas/graphs.html) de [Paulo Feofiloff](https://www.ime.usp.br/~pf/) sobre definições básicas de grafos e grafos direcionados, e as [video-aulas de Teoria dos Grafos](https://www.youtube.com/watch?v=kfHqZLYHfHU&list=PLndfcZyvAqbr2MLCOLEvBNX6FgD8UNWfX) do professor [Victor Campos](https://mdcc.ufc.br/pt/corpo-docente/victor-almeida-campos/).
@@ -56,9 +64,19 @@ Definimos brevemente uma heurística como um algoritmo que retorna uma solução
 
 Dada esta introdução, voltemos para o $k$-CSP. Como poderíamos propor uma heurística para este problema? Note que ao não nos importamos pela qualidade da solução podemos descartar a noção de que o caminho deve ter custo mínimo. Nosso objetivo é, portanto, meramente encontrar um caminho com no máximo $k$ cores distintas.
 
-Nosso obstáculo é que o problema de decidir se há um caminho entre um dado par de vértices em $G$ que utilize no máximo $k$ cores é conhecido ser $\mathbf{NP}$-completo a partir de uma redução do 3-SAT[^10]. A implicação deste resultado é que não há um algoritmo que, em tempo $O(n^{c})$ para algum $c \geq 1$, retorne uma solução viável o nosso problema a menos que $\mathbf{P} = \mathbf{NP}$.
+\nameddefinition{$k$-Colour Path}{
+  Dado um grafo com coloração de arestas $G = (V, E, c)$ e um par de vértices $s, t \in V$, o $k$-Colour Path consiste em obter um $st$-caminho em $G$ contendo no máximo $k$ cores distintas.
+}
 
-Isto não significa que não podemos fazer algo! Em 2023, os pesquisadores Cerrone e Russo propuseram uma heurística para o problema que roda em tempo $O(|L| n^{2})$ para um dado conjunto $L$ que definiremos adiante[^11]. O algoritmo, no entanto, nem sempre é capaz de retornar uma solução, e podemos facilmente construir classes de instâncias em que esse fenômeno ocorre[^12]. Aos curiosos, detalharemos o funcionamento desta heurística a seguir.
+A proposição abaixo, no entanto, apresenta-se como um obstáculo para a criação de uma heurística para este problema.
+
+\proposition{
+  O problema de decidir se há uma solução para o $k$-Colour Path é $\mathbf{NP}$-completo[^10].
+}
+
+A implicação deste resultado é que não há um algoritmo que, em tempo $O(n^{c})$ para algum $c \geq 1$, retorne uma solução viável o nosso problema a menos que $\mathbf{P} = \mathbf{NP}$.
+
+Isto não significa que não podemos fazer algo! Em 2023, os pesquisadores Cerrone e Russo propuseram um algoritmo pseudopolynomial para o problema com complexidade de tempo $O(|L| n^{2})$ para um dado conjunto $L$ que definiremos adiante[^11]. O algoritmo, no entanto, nem sempre é capaz de retornar uma solução, e podemos facilmente construir classes de instâncias em que esse fenômeno ocorre[^12]. Aos curiosos, detalharemos o funcionamento desta heurística a seguir.
 
 ### O algoritmo de Cerrone e Russo (2023)
 
@@ -113,23 +131,134 @@ Embora o algoritmo acima nem sempre seja capaz de retornar uma solução viável
 
 ## Métodos de resolução: programação linear inteira
 
-Nesta seção trataremos de como resolver problemas NP-difíceis em otimização combinatória ao tratarmos estes problemas como um problema de Programação Linear Inteira. Para mais informações sobre Programação Linear e Programação Linear Inteira confira as referência no rodapé[^16].
+Nesta seção trataremos de como resolver problemas $\mathbf{NP}$-difíceis em otimização combinatória ao tratarmos estes problemas como um problema de Programação Linear Inteira. Para mais informações sobre Programação Linear e Programação Linear Inteira confira as referência no rodapé[^16][^17][^18].
+
+Antes de começarmos, definiremos uma instância caracterizada pelo grafo direcionado $D$ equivalente ao nosso problema. A construção deste digrafo é feita pela orientação das arestas de $G$. Isto significa que para toda aresta $uv$ em $G$ nós adicionaremos os arcos $uv$ e $vu$ ao digrafo $D$, mantendo propriedades como cores e custos. O motivo para esta transformação ficará mais clara adiante.
+
+\namedexample{Orientação de Grafos}{
+  Considere o grafo na figura abaixo.
+
+  \begin{tikzpic}{exemplo_orientacao1}
+    \begin{scope}[every node/.style={draw, circle, thick, fill=white}]
+      \node (A) at (0, 0) {$A$};
+      \node (B) at (-1.5, -1.5) {$B$};
+      \node (C) at (1.5, -1.5) {$C$};
+      \node (D) at (4, -1.5) {$D$};
+      \node (E) at (0, -3) {$E$};
+    \end{scope}
+
+    \begin{scope}[every node/.style={circle, fill=white, text=black}]
+      \draw[thick, red] (A) -- (B);
+      \draw[thick, blue] (A) -- (C);
+      \draw[thick, blue] (B) -- (E);
+      \draw[thick, red] (C) -- (E);
+      \draw[thick, green] (C) -- (D);
+    \end{scope}
+  \end{tikzpic}
+
+  Para toda aresta, adicionamos dois arcos em direções opostas, obtendo o grafo direcionado abaixo.
+
+  \begin{tikzpic}{exemplo_orientacao2}
+    \begin{scope}[every node/.style={draw, circle, thick, fill=white}]
+      \node (A) at (0, 0) {$A$};
+      \node (B) at (-1.5, -1.5) {$B$};
+      \node (C) at (1.5, -1.5) {$C$};
+      \node (D) at (4, -1.5) {$D$};
+      \node (E) at (0, -3) {$E$};
+    \end{scope}
+
+    \begin{scope}[every node/.style={circle, fill=white, text=black}]
+      \draw[thick, red, ->] (A) edge[bend left] (B);
+      \draw[thick, blue, ->] (A) edge[bend left] (C);
+      \draw[thick, blue, ->] (B) edge[bend left] (E);
+      \draw[thick, red, ->] (C) edge[bend left] (E);
+      \draw[thick, green, ->] (C) edge[bend left] (D);
+
+      \draw[thick, red, ->] (B) edge[bend left] (A);
+      \draw[thick, blue, ->] (C) edge[bend left] (A);
+      \draw[thick, blue, ->] (E) edge[bend left] (B);
+      \draw[thick, red, ->] (E) edge[bend left] (C);
+      \draw[thick, green, ->] (D) edge[bend left] (C);
+    \end{scope}
+  \end{tikzpic}
+}
 
 Note que o $k$-CSP é um problema de minimização. O primeiro passo é codificar o objetivo do problema como uma função. Lembre-se que o objetivo do $k$-CSP é encontrar um caminho de custo mínimo, portanto, definiremos as seguintes variáveis binárias para toda aresta $uv \in E$ que serão úteis logo a seguir.
 
 $$
-x_{uv} = \begin{cases}
-    1 & \text{se a aresta } uv \text{ pertence à solução}, \\
-    0 & \text{caso contrário.}
-  \end{cases}
+  x_{uv} = \begin{cases}
+      1 & \text{se o arco } uv \text{ pertence à solução}, \\
+      0 & \text{caso contrário.}
+    \end{cases}
 $$
 
 Seguiremos com um breve abuso de notação ao definirmos $w_{uv} = w(uv)$ como o custo da aresta $uv$ para melhor visualização das equações a seguir.
 
 $$
-\min_{x} \sum_{uv \in E} w_{uv} x_{uv}
+  \min_{x} \sum_{uv \in E} w_{uv} x_{uv}
 $$
 
-O leitor atencioso deve notar que limitar-nos apenas a minimizar a função acima não garante que os valores escolhidos definirão um caminho. De fato, podemos definir $x = \mathbf{0}^{m}$, onde $\mathbf{0}^{m}$ é um vetor $m$-dimensional de zeros e $m = |E|$ é a quantidade de arestas do grafo.
+O leitor atencioso deve notar que limitar-nos apenas a minimizar a função acima não garante que os valores escolhidos definirão um caminho. De fato, podemos definir $x = \mathbf{0}^{m}$, onde $\mathbf{0}^{m}$ é um vetor $m$-dimensional de zeros e $m = |E|$ é a quantidade de arestas do grafo. Precisamos garantir que os valores de $x$ formem um caminho. Para isto, adicionaremos o que é conhecido na literatura como *restrições de fluxo*.
 
-[^15]: Referências.
+Antes de mostrarmos essas restrições, definimos $N^{+}(u)$ (resp. $N^{-}(u)$) para um dado vértice $u$ como a vizinhança de saída (resp. entrada) de $u$. Esta notação simboliza o conjunto de vértices $v$ tal que $uv$ (resp. $vu$) seja um arco do grafo direcionado. A igualdade abaixo deve ser satisfeita para todo vértice.
+
+$$
+  \sum_{v \in N^{-}(u)} x_{vu} - \sum_{v \in N^{+}(u)} x_{uv} = \begin{cases}
+    -1 & \text{se } u = s, \\
+    +1 & \text{se } u = t, \\
+    \phantom{+}0 & \text{caso contrário}.
+  \end{cases}
+$$
+
+As desigualdades acima funciona da seguinte maneira. Imagine as arestas do grafo como canos em uma rede hidraúlica, onde o fluxo do líquido começa na fonte $s$. Caso desejemos que o líquido chegue ao sumidouro $t$, então devemos algumas restrições: o fluxo só pode sair da nossa fonte, nunca entrar; o fluxo deve apenas chegar ao sumidouro, nunca sair; para toda outra interseção na rede, isto é, vértices do grafo, tudo que entra também deve sair.
+
+Agora vamos codificar o uso de cores! Definiremos a variável binária $y_{h}$ logo abaixo para toda cor $h$ existente no digrafo.
+
+$$
+  y_{h} = \begin{cases}
+      1 & \text{se a cor } h \text{ pertence à solução}, \\
+      0 & \text{caso contrário.}
+    \end{cases}
+$$
+
+Por definição, a soma dessas variáveis deve ser menor ou igual a $k$, portanto a restrição abaixo surge naturalmente. Por simplicidade, denotaremos por $C$ o conjunto de todas as cores. Esse tipo de restrição também é conhecida como *restrição de mochila*, em referência ao Problema da Mochila[^19].
+
+$$
+  \sum_{h \in C} y_{h} \leq k
+$$
+
+Agora, precisamos garantir que utilizar um arco implique o uso de sua cor. Para isso o leitor pode derivar a desigualdade abaixo utilizando seu conhecimento de lógica[^20].
+
+$$
+  x_{uv} \leq y_{h}, \; \text{se } c(uv) = h
+$$
+
+O nosso modelo matemático está completo! Para fácil visualização juntaremos todas as desigualdades derivadas até o momento em uma só equação. Denotaremos por $A$ o conjunto de arcos do grafo direcionado.
+
+$$
+  \begin{align*}
+    \min_{x} & \sum_{uv \in E} w_{uv} x_{uv} \\
+    & \sum_{v \in N^{-}(u)} x_{vu} - \sum_{v \in N^{+}(u)} x_{uv} = \begin{cases}
+      -1 & \text{se } u = s, \\
+      +1 & \text{se } u = t, \\
+      \phantom{+}0 & \text{caso contrário}.
+    \end{cases}, \; \forall \; u \in V \\
+    & \sum_{h \in C} y_{h} \leq k \\
+    & x_{uv} \leq y_{h}, \; \forall \; uv \in A \\
+    & x_{uv} \in \{0, 1\}, \; \forall \; uv \in A \\
+    & y_{h} \in \{0, 1\}, \; \forall \; h \in C
+  \end{align*}
+$$
+
+O modelo acima pode ser resolvido por meio de *solvers* matemáticos como CPLEX[^21], Gurobi[^22], e até mesmo gratuitos como GLPK[^23]. O leitor pode decidir implementar estes modelos tanto diretamente em software especializado quanto em uma linguagem de programação como Python e Julia utilizando as bibliotecas adequadas[^24][^25].
+
+[^16]: Bazaraa, M. S., Jarvis, J. J., & Sherali, H. D. (2011). Linear programming and network flows. John Wiley & Sons.
+[^17]: Wolsey, L. A. (2020). Integer programming. John Wiley & Sons.
+[^18]: Papadimitriou, C. H., & Steiglitz, K. (2013). Combinatorial optimization: algorithms and complexity. Courier Corporation.
+[^19]: https://pt.wikipedia.org/wiki/Problema\_da\_mochila
+[^20]: Busque entender o que ocorre ao escolhermos o arco $uv$.
+[^21]: https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-optimizer
+[^22]: https://www.gurobi.com/solutions/gurobi-optimizer/
+[^23]: https://www.gnu.org/software/glpk/
+[^24]: https://www.gurobi.com/resources/discover-how-you-can-boost-your-mathematical-optimization-modeling-skills-with-python/
+[^25]: https://jump.dev/

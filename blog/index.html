@@ -1,0 +1,60 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+    <head>
+        <meta
+            name="keywords"
+            content="Emanuel, Castelo, NP-completeness, UFC, algorithms, combinatorial optimization, integer programming, linear programming, research"
+        />
+        <meta name="author" content="Emanuel Castelo" />
+        <meta
+            name="description"
+            content="Personal website of Emanuel Castelo - researcher on combinatorial optimization"
+        />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Emanuel Castelo</title>
+        <script>
+            document.documentElement.className =
+                document.documentElement.className.replace(/\bno-js\b/g, "") +
+                " js ";
+        </script>
+        <!-- For all browsers -->
+        <link rel="stylesheet" href="/css/minimal-mistakes.css" />
+        <link rel="stylesheet" href="/css/blog.css" />
+
+        <!--[if IE]>
+            <style>
+                /* old IE unsupported flexbox fixes */
+                .greedy-nav .site-title {
+                    padding-right: 4em;
+                }
+                .greedy-nav button {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                }
+            </style>
+        <![endif]-->
+        <!-- start custom head snippets -->
+        <!-- insert favicons. use https://realfavicongenerator.net/ -->
+        <!-- end custom head snippets -->
+    </head>
+    <body class="layout--splash">
+        {{ insert masthead.html }}
+
+        <div id="main" role="main">
+            <p>
+                Currently, I have interest in creating content about Theoretical
+                Computer Science in Portuguese, as most content are in English.
+            </p>
+            {{ insert foot.html }}
+        </div>
+    </body>
+</html>
