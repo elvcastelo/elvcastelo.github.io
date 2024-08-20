@@ -25,5 +25,30 @@ website_url   = "https://elvcastelo.github.io/"
 <!--
 Add here global latex commands to use throughout your pages.
 -->
-# \newcommand{\R}{\mathbb R}
-# \newcommand{\scal}[1]{\langle #1 \rangle}
+\newcommand{\definition}[1]{
+  @@definition
+  **Definição**: #1
+  @@
+}
+\newcommand{\proposition}[1]{
+  @@proposition
+  **Proposição**: #1
+  @@
+}
+\newcommand{\nameddefinition}[2]{
+  @@definition
+  **Definição**: (_!#1_)
+  #2
+  @@
+}
+\newcommand{\example}[1]{
+  @@example
+  **Exemplo**: #1
+  @@
+}
+\newcommand{\namedexample}[2]{
+  @@example
+  **Exemplo**: (_!#1_)
+  #2
+  @@
+}
