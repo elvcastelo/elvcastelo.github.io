@@ -1,1 +1,1 @@
-@charset "utf-8";#main #bio{display:flex;flex-direction:row;text-align:justify;gap:20px}#main #bio img{border-radius:1.5em;max-height:250px;align-self:center}@media (max-width:800px){#main #bio{flex-direction:column}#main #bio img{margin-top:20px}}
+@charset "utf-8";#main #bio{display:flex;flex-direction:row;text-align:justify;gap:20px}.sec_picture{padding-top:2em;text-align:center}.sec_picture img{border-radius:100em;max-height:250px;filter:saturate(1.3)}@media (max-width:800px){#main #bio{flex-direction:column}}
