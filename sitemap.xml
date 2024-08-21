@@ -3,31 +3,37 @@
 
 <url>
     <loc>https://elvcastelo.github.io/blog/index.html</loc>
-    <lastmod>2024-08-20</lastmod>
+    <lastmod>2024-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>https://elvcastelo.github.io/misc/index.html</loc>
-    <lastmod>2024-08-20</lastmod>
+    <lastmod>2024-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>https://elvcastelo.github.io/blog/solving-np-hard-kcsp/index.html</loc>
-    <lastmod>2024-08-20</lastmod>
+    <lastmod>2024-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://elvcastelo.github.io/blog/solving-kcsp-problem/index.html</loc>
+    <lastmod>2024-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>https://elvcastelo.github.io/index/</loc>
-    <lastmod>2024-08-20</lastmod>
+    <lastmod>2024-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>https://elvcastelo.github.io/blog/index/</loc>
-    <lastmod>2024-08-20</lastmod>
+    <lastmod>2024-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
