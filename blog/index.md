@@ -1,1 +1,0 @@
-Currently, I have interest in creating content about Theoretical Computer Science in Portuguese, as most content are in English. An English version of the blogs posts are going to be available in English... eventually.
