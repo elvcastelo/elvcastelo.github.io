@@ -52,3 +52,8 @@ Add here global latex commands to use throughout your pages.
   #2
   @@
 }
+\newcommand{\corollary}[1]{
+  @@corollary
+    **Corolário**: #1
+  @@
+}
