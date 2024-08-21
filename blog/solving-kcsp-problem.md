@@ -281,9 +281,9 @@ Longe de serem as melhores apresentadas no trabalhos, entretanto, esta desiguald
 
 ## Conclusões
 
-Por ser um problema recente o $k$-Colour Shortest Path ainda possui muitos problemas em aberto. Além disso, existem algoritmos de branch-and-bound[^6] e de programação dinâmica[^27] propostos na literatura na qual não descorreremos sobre por ultrapassar a restrição de que este deve ser uma postagem de blog bem informal e casual.
+Por ser um problema recente, o $k$-Colour Shortest Path ainda possui muitos problemas em aberto. Além disso, existem algoritmos de branch-and-bound[^6] e de programação dinâmica[^27] propostos na literatura na qual não descorreremos sobre por ultrapassar a restrição de que este deve ser uma postagem de blog bem informal e casual.
 
-Sobre este último algoritmo, é curioso mencionar que o mesmo possui complexidade
+Sobre este último algoritmo é curioso mencionar que o mesmo possui complexidade
 
 $$
   O\left( \left(\sum_{i=1}^{k} {|C| \choose i} \right)^{2} n\right)
