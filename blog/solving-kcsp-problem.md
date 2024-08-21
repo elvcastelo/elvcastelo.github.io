@@ -279,18 +279,6 @@ $$
 
 Longe de serem as melhores apresentadas no trabalhos, entretanto, esta desigualdade em conjunto com a desigualdade análoga para arcos de entrada já produzem resultados. Exemplo disso pode ser visto com uma instância em que o modelo original descrito acima leva 615.4 segundo para obtenção do ótimo, enquanto a aplicação das desigualdades diminui esse tempo para 521.7 segundos. Outras desigualdades descritas em nosso trabalho foram capazes de diminuir esse tempo para 41.2 segundos[^15]!
 
-## Conclusões
-
-Por ser um problema recente, o $k$-Colour Shortest Path ainda possui muitos problemas em aberto. Além disso, existem algoritmos de branch-and-bound[^6] e de programação dinâmica[^27] propostos na literatura na qual não descorreremos sobre por ultrapassar a restrição de que este deve ser uma postagem de blog bem informal e casual.
-
-Sobre este último algoritmo é curioso mencionar que o mesmo possui complexidade
-
-$$
-  O\left( \left(\sum_{i=1}^{k} {|C| \choose i} \right)^{2} n\right)
-$$
-
-mas consegue, em média, resolver diversas instâncias da literatura anteriores as nossas em menos de 3 segundos[^27]. Por se tratarem de instâncias aleatórias, o estudo da complexidade de caso médio do $k$-CSP é um problema em aberto.
-
 [^16]: Bazaraa, M. S., Jarvis, J. J., & Sherali, H. D. (2011). Linear programming and network flows. John Wiley & Sons.
 [^17]: Wolsey, L. A. (2020). Integer programming. John Wiley & Sons.
 [^18]: Papadimitriou, C. H., & Steiglitz, K. (2013). Combinatorial optimization: algorithms and complexity. Courier Corporation.
@@ -303,3 +291,15 @@ mas consegue, em média, resolver diversas instâncias da literatura anteriores 
 [^25]: https://jump.dev/
 [^26]: A noção de tempo e tamanho de instâncias razoáveis é relativo ao problema.
 [^27]: Ferone, D., Festa, P., Fugaro, S., & Pastore, T. (2021). A dynamic programming algorithm for solving the k-color shortest path problem. Optimization Letters, 15(6), 1973-1992.
+
+## Conclusões
+
+Por ser um problema recente, o $k$-Colour Shortest Path ainda possui muitos problemas em aberto. Além disso, existem algoritmos de branch-and-bound[^6] e de programação dinâmica[^27] propostos na literatura na qual não descorreremos sobre por ultrapassar a restrição de que este deve ser uma postagem de blog bem informal e casual.
+
+Sobre este último algoritmo é curioso mencionar que o mesmo possui complexidade
+
+$$
+  O\left( \left(\sum_{i=1}^{k} {|C| \choose i} \right)^{2} n\right)
+$$
+
+mas consegue, em média, resolver diversas instâncias da literatura anteriores as nossas em menos de 3 segundos[^27]. Por se tratarem de instâncias aleatórias, o estudo da complexidade de caso médio do $k$-CSP é um problema em aberto.
