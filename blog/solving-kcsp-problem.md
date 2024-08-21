@@ -103,32 +103,32 @@ Abaixo o leitor poderá conferir o passo-a-passo do algoritmo executado em um gr
 
 ~~~
 <figure class="blogpost_figure">
-<img src="/assets/blog/solving-np-hard-kcsp/index/exemplo_heuristica_passo1.svg"/>
+<img src="/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo1.svg"/>
 <figcaption><strong>Passo 1:</strong> Iniciando do vértice fonte, prosseguimos para um vértice vizinho, destacado na imagem acima. Perceba que como a cor vermelha ainda não foi utilizada para alcançar o nó de rótulo 3, nós acrescentamos a penalidade ao custo do arco.</figcaption>
 </figure>
 
 <figure class="blogpost_figure">
-<img src="/assets/blog/solving-np-hard-kcsp/index/exemplo_heuristica_passo2.svg"/>
+<img src="/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo2.svg"/>
 <figcaption><strong>Passo 2:</strong> Visitamos o próximo vizinho da fonte e seguimos com o mesmo raciocínio da etapa anterior.</figcaption>
 </figure>
 
 <figure class="blogpost_figure">
-<img src="/assets/blog/solving-np-hard-kcsp/index/exemplo_heuristica_passo3.svg"/>
+<img src="/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo3.svg"/>
 <figcaption><strong>Passo 3:</strong> Ao visitarmos o próximo vértice, percebemos que a cor azul ainda não foi utilizada, e portanto, a penalidade é adicionado ao arco. </figcaption>
 </figure>
 
 <figure class="blogpost_figure">
-<img src="/assets/blog/solving-np-hard-kcsp/index/exemplo_heuristica_passo4.svg"/>
+<img src="/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo4.svg"/>
 <figcaption><strong>Passo 4:</strong> O mesmo ocorre no caminho acima.</figcaption>
 </figure>
 
 <figure class="blogpost_figure">
-<img src="/assets/blog/solving-np-hard-kcsp/index/exemplo_heuristica_passo5.svg"/>
+<img src="/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo5.svg"/>
 <figcaption><strong>Passo 5:</strong> Seguimos com o mesmo procedimento para o arco laranja.</figcaption>
 </figure>
 
 <figure class="blogpost_figure">
-<img src="/assets/blog/solving-np-hard-kcsp/index/exemplo_heuristica_passo6.svg"/>
+<img src="/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo6.svg"/>
 <figcaption><strong>Passo 6:</strong> Entretanto, perceba agora que como um arco de cor vermelha já ocorre no caminho de cima, uma penalidade não será adicionada no último arco visitado.</figcaption>
 </figure>
 ~~~
