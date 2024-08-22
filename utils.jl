@@ -1,5 +1,3 @@
-using Dates
-
 const isAppleARM = Sys.isapple() && Sys.ARCH === :aarch64
 if !isAppleARM
     using TikzPictures
@@ -17,12 +15,13 @@ function hfun_blogposts()
         fi = "/blog/" * splitext(list[i])[1] * "/"
         title = Franklin.hfun_fill(["title", fi[2:end-1]])
         description = Franklin.hfun_fill(["description", fi[2:end-1]])
+        date = Franklin.hfun_fill(["date", fi[2:end-1]])
         write(io, """<a href="$(fi)" class="blogpost_anchor">
             <div class=\"blogpost_info\">
             <h1>$(title)</h1>
             <p>$(description)</p>
             <hr />
-            <p class="blogpost_editdate">$(day(dates[i])) $(monthname(dates[i])) · $(ert) minutos de leitura</p>
+            <p class="blogpost_editdate">$(date) · $(ert) minutos de leitura</p>
             </div>
         </a>""")
     end

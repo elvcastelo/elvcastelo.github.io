@@ -1,6 +1,7 @@
 +++
 title = "O problema do caminho mínimo com no máximo k cores"
 description = "Discutiremos o problema de encontrar um caminho de custo mínimo em um grafo ponderado com coloração de arestas. Trata-se de um problema NP-difícil."
+date = "21 de Agosto"
 +++
 
 # O problema do caminho mínimo com no máximo k cores
