@@ -13,7 +13,7 @@ function hfun_blogposts()
 
     for i in eachindex(list)
         content = readlines(joinpath("blog", list[i]))
-        ert = ceil(Int, length(content) / 70)
+        ert = ceil(Int, length(content) / 30)
         fi = "/blog/" * splitext(list[i])[1] * "/"
         title = Franklin.hfun_fill(["title", fi[2:end-1]])
         description = Franklin.hfun_fill(["description", fi[2:end-1]])
