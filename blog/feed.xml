@@ -11,14 +11,17 @@
     <title>
       <![CDATA[  Emanuel Castelo  ]]>
     </title>
-    <link> https://elvcastelo.github.io/ </link>
+    <link> https://elvcastelo.github.io </link>
     <description>
       <![CDATA[  Personal website of Emanuel Castelo  ]]>
     </description>
     <atom:link
-      href="https://elvcastelo.github.io/feed.xml"
+      href="https://elvcastelo.github.io/blog/feed.xml"
       rel="self"
       type="application/rss+xml" />
+    <generator>
+        Franklin.jl - https://github.com/tlienart/Franklin.jl
+    </generator>
 
 
 <item>
