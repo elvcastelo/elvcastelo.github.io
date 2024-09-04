@@ -31,6 +31,9 @@ rss_file variable in your config file if you want to use something different tha
       href="{{fd_rss_feed_url}}"
       rel="self"
       type="application/rss+xml" />
+    <generator>
+        Franklin.jl - https://github.com/tlienart/Franklin.jl
+    </generator>
 <!--
 * items will be added here in chronological order
 * the channel will then be closed

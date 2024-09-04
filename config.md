@@ -19,8 +19,9 @@ ignore = ["node_modules/"]
 generate_rss = true
 website_title = "Emanuel Castelo"
 website_descr = "Personal website of Emanuel Castelo"
-website_url   = "https://elvcastelo.github.io/"
+website_url   = "https://elvcastelo.github.io"
 rss_full_content = true
+rss_file = "blog/feed"
 +++
 
 <!--
