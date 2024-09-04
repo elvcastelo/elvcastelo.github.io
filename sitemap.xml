@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-    <loc>https://elvcastelo.github.io/blog/misc/index.html</loc>
+    <loc>https://elvcastelo.github.io/misc/index.html</loc>
     <lastmod>2024-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://elvcastelo.github.io/blog/blog/solving-kcsp-problem/index.html</loc>
+    <loc>https://elvcastelo.github.io/blog/solving-kcsp-problem/index.html</loc>
+    <lastmod>2024-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://elvcastelo.github.io/index/</loc>
     <lastmod>2024-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>https://elvcastelo.github.io/blog/index/</loc>
-    <lastmod>2024-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://elvcastelo.github.io/blog/blog/index/</loc>
     <lastmod>2024-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

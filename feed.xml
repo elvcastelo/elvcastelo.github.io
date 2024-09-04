@@ -9,14 +9,14 @@
 
   <channel>
     <title>
-      <![CDATA[  Emanuel Castelo&#39;s blog  ]]>
+      <![CDATA[  Emanuel Castelo  ]]>
     </title>
-    <link> https://elvcastelo.github.io/blog/ </link>
+    <link> https://elvcastelo.github.io/ </link>
     <description>
-      <![CDATA[  Castelo&#39;s personal blog on Theoretical Computer Science topics  ]]>
+      <![CDATA[  Personal website of Emanuel Castelo  ]]>
     </description>
     <atom:link
-      href="https://elvcastelo.github.io/blog/feed.xml"
+      href="https://elvcastelo.github.io/feed.xml"
       rel="self"
       type="application/rss+xml" />
 
@@ -25,8 +25,8 @@
   <title>
     <![CDATA[  O problema do caminho mínimo com no máximo k cores  ]]>
   </title>
-  <link> https://elvcastelo.github.io/blog/blog/solving-kcsp-problem/index.html </link>
-  <guid> https://elvcastelo.github.io/blog/blog/solving-kcsp-problem/index.html </guid>
+  <link> https://elvcastelo.github.io/blog/solving-kcsp-problem/index.html </link>
+  <guid isPermaLink="true"> https://elvcastelo.github.io/blog/solving-kcsp-problem/index.html </guid>
   <description>
     <![CDATA[  Discutiremos o problema de encontrar um caminho de custo mínimo em um grafo ponderado com coloração de arestas. Trata-se de um problema NP-difícil.  ]]>
   </description>  
@@ -69,7 +69,7 @@
 <p>Chamamos de <em>\(st\)-caminho</em> um caminho em \(G\) partindo do vértice \(s\) ao vértice \(t\). Estes vértices são chamados de <em>fonte</em> e <em>sumidouro</em>, respectivamente.</p>
 <div class="proposition"><strong>Proposição</strong>:  O \(k\)-Colour Shortest Path é \(\mathbf{NP}\)-difícil<sup id="fnref:6">[6]</sup><sup id="fnref:7">[7]</sup>.</div>
 <a id="figexemplo_kcsp" class="anchor"></a>
-<img src="https://elvcastelo.github.io/blog/assets/blog/solving-kcsp-problem/exemplo_kcsp.svg" alt="">
+<img src="https://elvcastelo.github.io/assets/blog/solving-kcsp-problem/exemplo_kcsp.svg" alt="">
 <p>Observemos o exemplo dado na figura acima. Sejam \(A\) e \(D\) os vértices de origem e destino, respectivamente, e definamos \(k = 2\) como o limite de cores. Note que o \(AD\)-caminho de custo mínimo é dado pela sequência \(A \rightarrow B \rightarrow E \rightarrow C \rightarrow D\) de custo \(8\). Todavia, este caminho utiliza três cores &#40;vermelho, azul, e verde&#41;, portanto, não é considerado uma solução viável para o nosso problema. O leitor poderá conferir que a &#40;única&#41; solução ótima para nossa instância é dada pelo caminho \(A \rightarrow C \rightarrow D\) de custo \(10\), que utiliza duas cores distintas.</p>
 <p><table class="fndef" id="fndef:4">
     <tr>
@@ -110,22 +110,22 @@
 <p>Ignoremos as cores atribuidas às arestas. Para a obtenção de um caminho de custo mínimo em um grafo ponderado normalmente empregaríamos o algoritmo de Dijkstra<sup id="fnref:13">[13]</sup>, que executa em tempo \(O(n^{2})\) em uma simples implementação com fila de prioridade.</p>
 <p>E se além de levarmos em consideração o peso das arestas nós pudéssemos atribuir uma penalidade \(\lambda\) a cada nova cor? A ideia é a seguinte: podemos acrescentar \(\lambda\) ao custo da aresta sendo visitada se e somente se a cor desta aresta não tiver ocorrido no caminho até o momento. Esta estratégia visa &quot;desmotivar&quot; o algoritmo a escolher caminhos que introduzem novas cores. Cerrone e Russo &#40;2023&#41; definem uma lista \(L\) de penalidades, e para todo \(\lambda \in L\) executamos nossa modificação do algoritmo de Dijkstra.</p>
 <p>Abaixo o leitor poderá conferir o passo-a-passo do algoritmo executado em um grafo direcionado<sup id="fnref:14">[14]</sup> para \(k = 2\). Perceba que para \(\lambda \leq 4\) a heurística retorna o caminho \(s \rightarrow 3 \rightarrow 4 \rightarrow t\) como solução, embora esta não seja uma solução viável.</p><figure class="blogpost_figure">
-<img src="https://elvcastelo.github.io/blog/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo1.svg"/>
+<img src="https://elvcastelo.github.io/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo1.svg"/>
 <figcaption><strong>Passo 1:</strong> Iniciando do vértice fonte, prosseguimos para um vértice vizinho, destacado na imagem acima. Perceba que como a cor vermelha ainda não foi utilizada para alcançar o nó de rótulo 3, nós acrescentamos a penalidade ao custo do arco.</figcaption>
 </figure><figure class="blogpost_figure">
-<img src="https://elvcastelo.github.io/blog/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo2.svg"/>
+<img src="https://elvcastelo.github.io/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo2.svg"/>
 <figcaption><strong>Passo 2:</strong> Visitamos o próximo vizinho da fonte e seguimos com o mesmo raciocínio da etapa anterior.</figcaption>
 </figure><figure class="blogpost_figure">
-<img src="https://elvcastelo.github.io/blog/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo3.svg"/>
+<img src="https://elvcastelo.github.io/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo3.svg"/>
 <figcaption><strong>Passo 3:</strong> Ao visitarmos o próximo vértice, percebemos que a cor azul ainda não foi utilizada, e portanto, a penalidade é adicionado ao arco. </figcaption>
 </figure><figure class="blogpost_figure">
-<img src="https://elvcastelo.github.io/blog/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo4.svg"/>
+<img src="https://elvcastelo.github.io/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo4.svg"/>
 <figcaption><strong>Passo 4:</strong> O mesmo ocorre no caminho acima.</figcaption>
 </figure><figure class="blogpost_figure">
-<img src="https://elvcastelo.github.io/blog/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo5.svg"/>
+<img src="https://elvcastelo.github.io/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo5.svg"/>
 <figcaption><strong>Passo 5:</strong> Seguimos com o mesmo procedimento para o arco laranja.</figcaption>
 </figure><figure class="blogpost_figure">
-<img src="https://elvcastelo.github.io/blog/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo6.svg"/>
+<img src="https://elvcastelo.github.io/assets/blog/solving-kcsp-problem/exemplo_heuristica_passo6.svg"/>
 <figcaption><strong>Passo 6:</strong> Entretanto, perceba agora que como um arco de cor vermelha já ocorre no caminho de cima, uma penalidade não será adicionada no último arco visitado.</figcaption>
 </figure><p>Embora o algoritmo acima nem sempre seja capaz de retornar uma solução viável, os autores obtiveram bons resultados nas instâncias propostas na literatura anterior ao nosso trabalho<sup id="fnref:6">[6]</sup><sup id="fnref:11">[11]</sup><sup id="fnref:12">[12]</sup><sup id="fnref:15">[15]</sup>. A introdução de novas heurísticas ainda é um problema em aberto.</p>
 <p><table class="fndef" id="fndef:8">
@@ -181,9 +181,9 @@
 <p>Nesta seção trataremos de como resolver problemas \(\mathbf{NP}\)-difíceis de forma exata em otimização combinatória ao tratarmos estes problemas como um problema de Programação Linear Inteira. Para mais informações sobre Programação Linear e Programação Linear Inteira confira as referência no rodapé<sup id="fnref:16">[16]</sup><sup id="fnref:17">[17]</sup><sup id="fnref:18">[18]</sup>.</p>
 <p>Antes de começarmos, construiremos uma instância equivalente representada pelo grafo direcionado ponderado com coloração de arcos \(D = (V, A, w', c')\) de modo a simplificar o modelo matemático. Relembramos o leitor que recebemos como entrada o grafo ponderado com coloração de arestas \(G = (V, E, w, c)\). Para toda aresta \(uv \in E\) adicionaremos os arcos \(uv\) e \(vu\) ao conjunto \(A\), onde \(w'(uv) = w'(vu) = w(uv)\) e \(c'(uv) = c'(vu) = c(uv)\).</p>
 <div class="example"><p><strong>Exemplo</strong>: &#40;<em>Representação de Grafos como Grafos Direcionados</em>&#41;    Considere o grafo na figura abaixo.</p>
-<img src="https://elvcastelo.github.io/blog/assets/blog/solving-kcsp-problem/exemplo_orientacao1.svg" alt="">
+<img src="https://elvcastelo.github.io/assets/blog/solving-kcsp-problem/exemplo_orientacao1.svg" alt="">
 <p>Para toda aresta, adicionamos dois arcos em direções opostas, obtendo o grafo direcionado abaixo.</p>
-<img src="https://elvcastelo.github.io/blog/assets/blog/solving-kcsp-problem/exemplo_orientacao2.svg" alt="">
+<img src="https://elvcastelo.github.io/assets/blog/solving-kcsp-problem/exemplo_orientacao2.svg" alt="">
 <p>Perceba que as cores e custos &#40;neste exemplo toda aresta possui custo unitário&#41; dos arcos são os mesmos da aresta na qual eles representam.</p></div>
 <p>Note que o \(k\)-CSP é um problema de minimização. O primeiro passo é codificar o objetivo do problema como uma função. Lembre-se que o objetivo do \(k\)-CSP é encontrar um caminho de custo mínimo, portanto, definiremos as seguintes variáveis binárias para toda aresta \(uv \in E\) que serão úteis logo a seguir.</p>
 \[
@@ -326,6 +326,8 @@
   <atom:author>
     <atom:name>Emanuel Castelo</atom:name>
   </atom:author>
-        
+    
+  <category> algorithms </category>
+      
 </item>
 </channel></rss>

@@ -1,4 +1,4 @@
-Sitemap: https://elvcastelo.github.io/blog/sitemap.xml
+Sitemap: https://elvcastelo.github.io/sitemap.xml
 
 User-agent: *
 Disallow:
