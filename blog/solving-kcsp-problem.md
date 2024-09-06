@@ -2,6 +2,7 @@
 title = "O problema do caminho mínimo com no máximo k cores"
 description = "Discutiremos o problema de encontrar um caminho de custo mínimo em um grafo ponderado com coloração de arestas. Trata-se de um problema NP-difícil."
 date = "21 de Agosto"
+category = "Integer Programming"
 rss_title = "O problema do caminho mínimo com no máximo k cores"
 rss_description = "Discutiremos o problema de encontrar um caminho de custo mínimo em um grafo ponderado com coloração de arestas. Trata-se de um problema NP-difícil."
 rss_pubdate = Date(2024, 08, 21)

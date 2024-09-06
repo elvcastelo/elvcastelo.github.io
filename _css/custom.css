@@ -1,3 +1,13 @@
+:root {
+    --text-colour: #313131;
+    --hover-colour: #ffa300;
+    --bg-darker-colour: #f7f7f7;
+}
+
+body {
+    color: var(--text-colour);
+}
+
 #main #bio {
     display: flex;
     flex-direction: row;

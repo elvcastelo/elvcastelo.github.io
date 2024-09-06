@@ -42,21 +42,31 @@
     flex-direction: column;
 }
 
-.blogpost_editdate {
+.blogpost_meta {
     color: gray;
     font-size: 0.9em;
 }
 
-.blogpost_info {
-    color: #4d4d4d;
-    text-decoration: none;
-    background-color: #f8f8f8;
-    border-radius: 30px;
-    padding: 1em;
-    margin-bottom: 1em;
+.blogpost h2 {
+    font-size: 1.8em;
+    margin: 0;
 }
 
-.blogpost_info h1 {
-    color: black;
-    font-size: 1.4em;
+.blogpost_readmore:visited {
+    color: #333;
+}
+
+.blogpost_readmore {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    border-bottom: 2px solid #333;
+    transition: border-color 0.3s ease;
+}
+
+.blogpost_readmore:hover {
+    color: #ffa300;
+    border-color: #ffa300;
 }

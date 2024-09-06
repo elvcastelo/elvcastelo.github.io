@@ -16,14 +16,20 @@ function hfun_blogposts()
         title = Franklin.hfun_fill(["title", fi[2:end-1]])
         description = Franklin.hfun_fill(["description", fi[2:end-1]])
         date = Franklin.hfun_fill(["date", fi[2:end-1]])
-        write(io, """<a href="$(fi)" class="blogpost_anchor">
-            <div class=\"blogpost_info\">
-            <h1>$(title)</h1>
-            <p>$(description)</p>
-            <hr />
-            <p class="blogpost_editdate">$(date) · $(ert) minutos de leitura</p>
-            </div>
-        </a>""")
+        category = Franklin.hfun_fill(["category", fi[2:end-1]])
+
+        write(
+            io,
+            """<section>
+      <article class=\"blogpost\">
+      <h2>$(title)</h2>
+      <p class="blogpost_meta">Posted on $(date) | $(category) · $(ert) minutos de leitura</p>
+      <p>$(description)</p>
+      <a href=$(fi) class="blogpost_readmore">Read more</a>
+      <hr />
+      </article>
+  </section>"""
+        )
     end
 
     return String(take!(io))
