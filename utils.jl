@@ -23,9 +23,9 @@ function hfun_blogposts()
             """<section>
       <article class=\"blogpost\">
       <h2>$(title)</h2>
-      <p class="blogpost_meta">Posted on $(date) | $(category) · $(ert) minutos de leitura</p>
+      <p class="blogpost_meta">Publicado em $(date) | $(category) · $(ert) minutos de leitura</p>
       <p>$(description)</p>
-      <a href=$(fi) class="blogpost_readmore">Read more</a>
+      <a href=$(fi) class="blogpost_readmore">Ler mais</a>
       <hr />
       </article>
   </section>"""
