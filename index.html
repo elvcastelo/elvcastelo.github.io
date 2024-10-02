@@ -49,12 +49,14 @@
         {{ insert masthead.html }}
 
         <div id="main" role="main">
-            <section class="sec_picture">
-                <img
-                    src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K8904689Z2"
-                    alt="Profile picture of Emanuel Castelo"
-                />
-            </section>
+                <section class="sec_picture">
+                    <div class="image-container">
+                    <img
+                        src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K8904689Z2"
+                        alt="Profile picture of Emanuel Castelo"
+                    />
+                    </div>
+                </section>
             <section class="sec_short_bio">
                 <h2>Short Bio</h2>
                 <p>
@@ -81,21 +83,20 @@
                     >.
                 </p>
                 <p>
-                    I defended my master's thesis at
+                    I defended my master's thesis on the
+                    <a
+                        href="https://repositorio.ufc.br/bitstream/riufc/73496/3/2023_dis_eescastelo.pdf"
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                        >k-Color Shortest Path</a
+                    >
+                    problem at
                     <a
                         href="http://www.mdcc.ufc.br/"
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                         >Universidade Federal do Ceará</a
-                    >
-                    on the
-                    <a
-                        href="https://repositorio.ufc.br/bitstream/riufc/73496/3/2023_dis_eescastelo.pdf"
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        >k-Colour Shortest Path</a
-                    >
-                    (k-CSP) problem. During this period I was member of the
+                    >. During this period I was member of the
                     <a
                         href="https://pargo.ufc.br/en/presentation/"
                         ,
@@ -128,6 +129,3 @@
             </section>
 
             {{ insert foot.html }}
-        </div>
-    </body>
-</html>

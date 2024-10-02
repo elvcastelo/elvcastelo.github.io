@@ -2555,7 +2555,6 @@ th {
     width: 100%;
     clear: both;
     position: absolute;
-    bottom: 0;
     height: auto;
     color: #898c8f;
     -webkit-animation: intro 0.3s both;
