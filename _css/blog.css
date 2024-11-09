@@ -54,16 +54,15 @@
 }
 
 .blogpost_readmore {
-    color: #333;
+    color: var(--color-smoky-black) !important;
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
     margin-top: 10px;
-    border-bottom: 2px solid #333;
-    transition: border-color 0.3s ease;
+    border-bottom: 2px solid var(--color-smoky-black);
 }
 
 .blogpost_readmore:hover {
-    color: #ffa300;
-    border-color: #ffa300;
+    color: var(--color-coral) !important;
+    border-color: var(--color-coral);
 }
