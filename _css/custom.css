@@ -33,7 +33,7 @@ body {
 .sec_picture img {
     border-radius: 1em;
     width: 50rem;
-    filter: saturate(1.3);
+    filter: saturate(0);
 }
 
 .page__footer {
