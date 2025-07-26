@@ -36,7 +36,6 @@ function hfun_blogposts()
 end
 
 if !isAppleARM
-
     # so we don't have to install LaTeX on CI
     tikzUseTectonic(true)
 
