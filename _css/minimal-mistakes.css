@@ -4,10 +4,6 @@
  * Licensed under MIT (https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE)
 */
 
-.mfp-counter {
-    font-family: Georgia, Times, serif;
-}
-
 .mfp-bg {
     top: 0;
     left: 0;
@@ -173,7 +169,6 @@ button::-moz-focus-inner {
     color: #fff;
     font-style: normal;
     font-size: 28px;
-    font-family: Georgia, Times, serif;
 }
 
 .mfp-close:hover,
@@ -680,9 +675,6 @@ html {
 body {
     margin: 0;
     padding: 0;
-    color: #494e52;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     line-height: 1.5;
 }
 
@@ -698,8 +690,6 @@ h5,
 h6 {
     margin: 2em 0 0.5em;
     line-height: 1.2;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     font-weight: bold;
 }
 
@@ -1024,8 +1014,6 @@ button,
 select,
 textarea {
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 }
 
 label {
@@ -1332,8 +1320,6 @@ table {
     display: block;
     margin-bottom: 1em;
     width: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     font-size: 0.75em;
     border-collapse: collapse;
     overflow-x: auto;
@@ -1390,8 +1376,6 @@ th {
     display: inline-block;
     margin-bottom: 0.25em;
     padding: 0.5em 1em;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     font-size: 0.75em;
     font-weight: bold;
     text-align: center;
@@ -1836,8 +1820,6 @@ th {
     margin: 2em 0 !important;
     padding: 1em;
     color: #494e52;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     font-size: 0.75em !important;
     text-indent: initial;
     background-color: #fdefef;
@@ -1882,7 +1864,6 @@ th {
 
 .masthead {
     position: relative;
-    border-bottom: 1px solid #f2f3f3;
     -webkit-animation: intro 0.3s both;
     animation: intro 0.3s both;
     -webkit-animation-delay: 0.15s;
@@ -1894,7 +1875,6 @@ th {
     clear: both;
     margin-left: auto;
     margin-right: auto;
-    padding: 1em;
     max-width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1902,8 +1882,6 @@ th {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 }
 
 .masthead__inner-wrap::after {

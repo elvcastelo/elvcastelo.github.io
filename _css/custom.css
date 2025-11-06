@@ -1,14 +1,21 @@
 :root {
     --color-isabelline: #f5efed;
-    --color-smoky-black: #0f0a0a;
-    --color-coral: #ff7f51;
+    --color-smoky-black: #000000;
+    --color-coral: #e84747;
     --color-medium-slate-blue: #6f73d2;
-    --bg-darker-colour: #f7f7f7;
+    --bg-darker-colour: #c5c5c5;
 }
 
 body {
     color: var(--color-smoky-black);
-    background-color: var(--color-isabelline);
+    background-color: var(--bg-darker-colour);
+    font-family: "Rethink Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.masthead {
+    border-bottom: 1px solid var(--color-smoky-black);
 }
 
 #main a {
@@ -31,9 +38,8 @@ body {
 }
 
 .sec_picture img {
-    border-radius: 1em;
+    border-radius: 0.6em;
     width: 50rem;
-    filter: saturate(0);
 }
 
 .page__footer {
