@@ -1,8 +1,3 @@
-const isAppleARM = Sys.isapple() && Sys.ARCH === :aarch64
-if !isAppleARM
-    using TikzPictures
-end
-
 function hfun_blogposts()
     list = readdir("blog")
     filter!(f -> endswith(f, ".md"), list)
@@ -33,27 +28,4 @@ function hfun_blogposts()
     end
 
     return String(take!(io))
-end
-
-if !isAppleARM
-    # so we don't have to install LaTeX on CI
-    tikzUseTectonic(true)
-
-    function env_tikzpic(e, _)
-        content = strip(Franklin.content(e))
-        name = strip(Franklin.content(e.braces[1]))
-        # save SVG at __site/assets/[path/to/file]/$name.svg
-        rpath = joinpath("assets", splitext(Franklin.locvar(:fd_rpath))[1], "$name.svg")
-        outpath = joinpath(Franklin.path(:site), rpath)
-        println(outpath)
-        # if the directory doesn't exist, create it
-        outdir = dirname(outpath)
-        isdir(outdir) || mkpath(outdir)
-        # save the file and show it
-        save(SVG(outpath), TikzPicture(content))
-        return "\\fig{/$(Franklin.unixify(rpath))}"
-    end
-
-else
-    env_tikzpic(_, _) = ""
 end
