@@ -2,7 +2,7 @@
 Add here global page variables to use throughout your website.
 -->
 +++
-author = "Emanuel Castelo"
+# author = "Emanuel Castelo"
 mintoclevel = 2
 
 # uncomment and adjust the following line if the expected base URL of your website is something like [www.thebase.com/yourproject/]
@@ -16,46 +16,10 @@ mintoclevel = 2
 ignore = ["node_modules/"]
 
 # RSS (the website_{title, descr, url} must be defined to get RSS)
-generate_rss = true
-website_title = "Emanuel Castelo"
-website_descr = "Personal website of Emanuel Castelo"
-website_url   = "https://elvcastelo.github.io"
-rss_full_content = true
-rss_file = "blog/feed"
+generate_rss = false
+# website_title = "Emanuel Castelo"
+# website_descr = "Personal website of Emanuel Castelo"
+# website_url   = "https://elvcastelo.github.io"
+# rss_full_content = false
+# rss_file = "blog/feed"
 +++
-
-<!--
-Add here global latex commands to use throughout your pages.
--->
-\newcommand{\definition}[1]{
-  @@definition
-  **Definição**: #1
-  @@
-}
-\newcommand{\proposition}[1]{
-  @@proposition
-  **Proposição**: #1
-  @@
-}
-\newcommand{\nameddefinition}[2]{
-  @@definition
-  **Definição**: (_!#1_)
-  #2
-  @@
-}
-\newcommand{\example}[1]{
-  @@example
-  **Exemplo**: #1
-  @@
-}
-\newcommand{\namedexample}[2]{
-  @@example
-  **Exemplo**: (_!#1_)
-  #2
-  @@
-}
-\newcommand{\corollary}[1]{
-  @@corollary
-    **Corolário**: #1
-  @@
-}
