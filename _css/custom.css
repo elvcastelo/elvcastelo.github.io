@@ -1,9 +1,9 @@
 :root {
     --color-isabelline: #f5efed;
     --color-smoky-black: #000000;
-    --color-coral: #e84747;
+    --color-emphasis: #B20D30;
     --color-medium-slate-blue: #6f73d2;
-    --bg-darker-colour: #c5c5c5;
+    --bg-darker-colour: #d7d7d7;
 }
 
 body {
@@ -20,11 +20,11 @@ body {
 
 #main a {
     text-decoration: none;
-    color: var(--color-coral);
+    color: var(--color-emphasis);
 }
 
 #main a:visited {
-    color: var(--color-coral);
+    color: var(--color-emphasis);
 }
 
 .sec_information {

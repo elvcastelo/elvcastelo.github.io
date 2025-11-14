@@ -788,14 +788,6 @@ a:hover {
     outline: 0;
 }
 
-tt,
-code,
-kbd,
-samp,
-pre {
-    font-family: Monaco, Consolas, "Lucida Console", monospace;
-}
-
 pre {
     overflow-x: auto;
 }
@@ -896,7 +888,6 @@ figure.third figcaption {
 figcaption {
     margin-bottom: 0.5em;
     color: #898c8f;
-    font-family: Georgia, Times, serif;
     font-size: 0.75em;
 }
 
@@ -1580,8 +1571,6 @@ th {
     margin: 2em 0 !important;
     padding: 1em;
     color: #494e52;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     font-size: 0.75em !important;
     text-indent: initial;
     background-color: #f8f9f9;
@@ -1628,8 +1617,6 @@ th {
     margin: 2em 0 !important;
     padding: 1em;
     color: #494e52;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     font-size: 0.75em !important;
     text-indent: initial;
     background-color: #f1f1f2;
@@ -1676,8 +1663,6 @@ th {
     margin: 2em 0 !important;
     padding: 1em;
     color: #494e52;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     font-size: 0.75em !important;
     text-indent: initial;
     background-color: #ebf5f8;
@@ -1724,8 +1709,6 @@ th {
     margin: 2em 0 !important;
     padding: 1em;
     color: #494e52;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     font-size: 0.75em !important;
     text-indent: initial;
     background-color: #fbf2e6;
@@ -1772,8 +1755,6 @@ th {
     margin: 2em 0 !important;
     padding: 1em;
     color: #494e52;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     font-size: 0.75em !important;
     text-indent: initial;
     background-color: #ecf6ec;
@@ -1960,8 +1941,6 @@ th {
     max-width: 100%;
     padding-left: 1em;
     padding-right: 1em;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-        "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     -webkit-animation: intro 0.3s both;
     animation: intro 0.3s both;
     -webkit-animation-delay: 0.3s;
