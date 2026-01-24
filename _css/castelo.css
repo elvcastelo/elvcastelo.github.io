@@ -8,6 +8,8 @@
     --gap-lg: 1.4rem;
     --max-photo-width: 17rem;
     --photo-width-mobile: 15rem;
+    --desktop-font-size: 22px;
+    --mobile-font-size: 18px;
 
     --page-max-width: 80ch;
     --type-sans:
@@ -28,7 +30,7 @@ html {
     font-family: var(--type-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 22px;
+    font-size: var(--desktop-font-size);
 }
 
 body {
@@ -115,6 +117,10 @@ a:focus-visible {
     filter: grayscale(100) contrast(1.2);
 }
 
+.misc {
+    margin-bottom: 5vh;
+}
+
 /* Footer */
 .page__footer {
     background-color: var(--color-isabelline);
@@ -137,6 +143,10 @@ a:focus-visible {
 /* Breakpoints */
 
 @media (max-width: 1024px) {
+    html {
+        font-size: var(--mobile-font-size);
+    }
+
     .profile-grid {
         flex-direction: column;
     }
