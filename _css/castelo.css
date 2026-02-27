@@ -114,7 +114,7 @@ a:focus-visible {
     border-radius: 0.6em;
     height: auto;
     width: var(--max-photo-width);
-    filter: grayscale(100) contrast(1.2);
+    /* filter: grayscale(100) contrast(1.2); */
 }
 
 .misc {
