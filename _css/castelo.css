@@ -1,5 +1,8 @@
 :root {
-    font-family: Verdana, sans-serif;
+    font-family: 'Newsreader', serif;
+    --color-bg: #F5F3EE;
+    --color-text: #2C2D30;
+    --color-text-light: #595A5D;
 }
 
 a, a:visited {
@@ -7,13 +10,19 @@ a, a:visited {
     color: green;
 }
 
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--color-text-light);
+}
+
 body {
+    color: var(--color-text);
     line-height: 1.6;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     max-width: 750px;
     margin: 40px auto;
     padding: 0 10px;
-    background-color: #EEEEEE;
+    background-color: var(--color-bg);
 }
 
 figure {
@@ -22,7 +31,7 @@ figure {
 }
 
 figcaption, figure span {
-    color: gray;
+    color: var(--color-text-light);
     font-size: 1rem;
     line-height: 1.3;
 }
