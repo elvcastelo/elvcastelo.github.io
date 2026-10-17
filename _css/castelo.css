@@ -43,8 +43,16 @@ figure span {
     margin-top: -4rem;
 }
 
+#profile_picture {
+    height: 40rem;
+}
+
 @media (max-width: 1279px) {
     figure span {
         display: none;
+    }
+
+    #profile_picture {
+        height: 25rem;
     }
 }
